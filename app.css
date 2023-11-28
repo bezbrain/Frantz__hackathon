@@ -504,6 +504,7 @@ hr {
   cursor: pointer;
   border: none;
   background-color: #fff;
+  color: #000;
 }
 .main__body__top > .toggle__btn:hover {
   background-color: #f1f1f1;
