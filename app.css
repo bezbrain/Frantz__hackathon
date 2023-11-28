@@ -142,6 +142,10 @@ input:focus {
   display: block;
 }
 
+button {
+  color: #000;
+}
+
 /* Notification Dropdown */
 .notification__dropdown {
   display: none;
