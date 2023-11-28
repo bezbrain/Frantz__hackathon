@@ -206,7 +206,8 @@ input:focus {
   width: 320px;
   font-size: 13px;
   padding: 4px;
-  box-shadow: 5px -1px 8px 5px #f1f1f1;
+  box-shadow: 5px -1px 0px 5px #f1f1f1;
+  z-index: 9;
   /* border: 2px solid red; */
 }
 .toggle__profile__dropdown {
@@ -371,7 +372,7 @@ hr {
 }
 @media screen and (max-width: 900px) {
   .all__body {
-    /* margin-inline: 16px; */
+    margin-inline: 16px;
   }
 }
 
@@ -608,13 +609,14 @@ hr {
 .item__summary > span {
   font-size: 13px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
   .item__summary {
-    max-width: 95%;
+    width: 95%;
   }
   .item__summary > span {
-    margin-right: 12px;
-    display: block;
+    /* margin-right: 12px; */
+    /* width: 100%; */
+    /* display: block; */
   }
 }
 
