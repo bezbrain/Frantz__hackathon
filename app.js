@@ -145,7 +145,6 @@ function handleNeutral() {
 
 // Loop and hide opened guide (but not the first one) at initial load of the page
 allGuidesSummary.forEach(function (guideSummary, i) {
-  // console.log(i);
   if (i !== guideCount) {
     guideSummary.style.display = "none";
   }
@@ -159,6 +158,9 @@ guideTitles.forEach(function (guideTitle, i) {
 
   guideTitle.addEventListener("click", function (e) {
     handleNeutral();
+
+    // When Enter key is clicked for title, focus on notCompletedIcon
+    notCompletedIcon[i].focus();
 
     guideItems[i].classList.remove("add__guide__item");
     allGuidesSummary[i].style.display = "flex";
