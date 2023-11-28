@@ -13,8 +13,6 @@ body {
   background-color: var(--mainBg);
   color: #303030;
   font-family: Inter;
-  overflow-y: hidden;
-  max-width: 100vw;
 }
 
 /* Styles for mouse users */
@@ -372,7 +370,7 @@ hr {
 }
 @media screen and (max-width: 900px) {
   .all__body {
-    margin-inline: 16px;
+    /* margin-inline: 16px; */
   }
 }
 

@@ -14,36 +14,45 @@ const headerClose = document.querySelector(".header__close__icon");
 const bodyHeader = document.querySelector(".body__header");
 
 // Dropdown notification functionality
-notificationBell.addEventListener("click", function () {
+function notiBellFunc() {
   profileDropdown.classList.remove("toggle__profile__dropdown");
   notificationDrop.classList.toggle("toggle__noti__dropdown");
-  //   isNotiOpen();
-});
+}
+notificationBell.addEventListener("click", notiBellFunc);
 
-// function isNotiOpen() {
-//   if (notificationDrop.classList.contains("toggle__noti__dropdown")) {
-//     slantHamburger.setAttribute("tabindex", "4");
-//     markedNoti.setAttribute("tabindex", "5");
-//   } else {
-//     slantHamburger.removeAttribute("tabindex");
-//     markedNoti.removeAttribute("tabindex");
-//   }
-// }
+// Use this function to close the notification dropdown when out of the drop down
+function isNotiOpen() {
+  if (document.activeElement === profileBtn) {
+    notificationDrop.classList.remove("toggle__noti__dropdown");
+  }
+  // Add an event listener for the profileBtn focus event
+  profileBtn.addEventListener("focus", function () {
+    notificationDrop.classList.remove("toggle__noti__dropdown");
+  });
+}
+
+isNotiOpen();
+
+// Use this function to close the profile dropdown when out of the drop down
+function isProfileOpen() {
+  const selectPlanBtn = document.querySelector("#select__plan__btn");
+  if (document.activeElement === selectPlanBtn) {
+    profileDropdown.classList.remove("toggle__profile__dropdown");
+  }
+  // Add an event listener for the markedNoti focus event
+  selectPlanBtn.addEventListener("focus", function () {
+    profileDropdown.classList.remove("toggle__profile__dropdown");
+  });
+}
+
+isProfileOpen();
 
 // Dropdown profile functionality
-profileBtn.addEventListener("click", function () {
+function profileBtnFunc() {
   notificationDrop.classList.remove("toggle__noti__dropdown");
   profileDropdown.classList.toggle("toggle__profile__dropdown");
-});
-
-document.body.addEventListener("click", function (e) {
-  // if (e.target !== notificationBell) {
-  //   notificationDrop.classList.remove("toggle__noti__dropdown");
-  // }
-  // if (e.target !== profileBtn) {
-  //   profileDropdown.classList.remove("toggle__profile__dropdown");
-  // }
-});
+}
+profileBtn.addEventListener("click", profileBtnFunc);
 
 // Function to clase the header body header of the page
 headerClose.addEventListener("click", function () {
@@ -93,9 +102,9 @@ bodyDropdownCloseIcon.addEventListener("click", closeSetupGuide);
 
 bodyDropdownOpenIcon.addEventListener("click", openSetupGuide);
 
-// Handle Progress bar - increase
 let numberProgress = 0;
 
+// Handle Progress bar - increase
 function guideProgressIncrease() {
   numberProgress++;
   progressCounter.textContent = numberProgress;
