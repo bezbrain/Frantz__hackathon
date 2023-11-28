@@ -55,6 +55,12 @@ headerClose.addEventListener("click", function () {
 // TAGS SELECTION FOR BODY GUIDE
 const bodyDropdownCloseIcon = document.querySelector(".setup__close__icon");
 const bodyDropdownOpenIcon = document.querySelector(".setup__open__icon");
+
+const progress = document.querySelector(".progress > span");
+let progressCounter = document.querySelector(
+  ".text__and__progress > span > span"
+);
+
 const allBodyList = document.querySelector(".all__lists");
 const allGuidesSummary = document.querySelectorAll(".is__remove");
 const guideTitles = document.querySelectorAll(".guide__title");
@@ -83,13 +89,31 @@ function openSetupGuide() {
   bodyDropdownCloseIcon.style.display = "block";
 }
 
-bodyDropdownCloseIcon.addEventListener("click", function () {
-  closeSetupGuide();
-});
+bodyDropdownCloseIcon.addEventListener("click", closeSetupGuide);
 
-bodyDropdownOpenIcon.addEventListener("click", function () {
-  openSetupGuide();
-});
+bodyDropdownOpenIcon.addEventListener("click", openSetupGuide);
+
+// Handle Progress bar - increase
+let numberProgress = 0;
+
+function guideProgressIncrease() {
+  numberProgress++;
+  progressCounter.textContent = numberProgress;
+
+  progress.classList.add("add__progress");
+  const currentWidth = parseInt(progress.style.width) || 0;
+  progress.style.width = `${currentWidth + 20}%`;
+}
+
+// Handle Progress bar - decrease
+function guideProgressDecrease() {
+  numberProgress--;
+  progressCounter.textContent = numberProgress;
+
+  progress.classList.add("add__progress");
+  const currentWidth = parseInt(progress.style.width) || 0;
+  progress.style.width = `${currentWidth - 20}%`;
+}
 
 let guideCount = 0;
 
@@ -143,10 +167,11 @@ guideItems.forEach(function (guideItem, i) {
 // The Guide complete roller
 notCompletedIcon.forEach(function (each, i) {
   each.addEventListener("click", function (e) {
-    console.log("I am clicked");
     loadingSpinnerIcon[i].style.display = "block";
     notCompletedIcon[i].style.display = "none";
     e.currentTarget.classList.add("add-spinning-animation");
+
+    guideProgressIncrease();
 
     setTimeout(function () {
       loadingSpinnerIcon[i].style.display = "none";
@@ -163,6 +188,7 @@ notCompletedIcon.forEach(function (each, i) {
 
 completedIcon.forEach(function (each, i) {
   each.addEventListener("click", function () {
+    guideProgressDecrease();
     completedIcon[i].style.display = "none";
     notCompletedIcon[i].style.display = "block";
   });
