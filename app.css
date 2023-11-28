@@ -28,12 +28,15 @@ button:focus,
 svg:focus,
 img:focus,
 span:focus,
-input:focus,
 div:focus,
 p:focus,
 h4:focus {
   outline: none;
-  border: 3px solid #36fba1 !important;
+  border: 3px solid #005bd3 !important;
+}
+input:focus {
+  outline: none;
+  border: 2px solid #fff !important;
 }
 
 /* =================== */

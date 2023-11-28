@@ -17,18 +17,18 @@ const bodyHeader = document.querySelector(".body__header");
 notificationBell.addEventListener("click", function () {
   profileDropdown.classList.remove("toggle__profile__dropdown");
   notificationDrop.classList.toggle("toggle__noti__dropdown");
-  isNotiOpen();
+  //   isNotiOpen();
 });
 
-function isNotiOpen() {
-  if (notificationDrop.classList.contains("toggle__noti__dropdown")) {
-    slantHamburger.setAttribute("tabindex", "4");
-    markedNoti.setAttribute("tabindex", "5");
-  } else {
-    slantHamburger.removeAttribute("tabindex");
-    markedNoti.removeAttribute("tabindex");
-  }
-}
+// function isNotiOpen() {
+//   if (notificationDrop.classList.contains("toggle__noti__dropdown")) {
+//     slantHamburger.setAttribute("tabindex", "4");
+//     markedNoti.setAttribute("tabindex", "5");
+//   } else {
+//     slantHamburger.removeAttribute("tabindex");
+//     markedNoti.removeAttribute("tabindex");
+//   }
+// }
 
 // Dropdown profile functionality
 profileBtn.addEventListener("click", function () {
