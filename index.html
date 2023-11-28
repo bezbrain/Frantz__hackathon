@@ -1,0 +1,851 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body class="keyboard__user">
+    <!-- The header of the dashboard -->
+    <header class="dashboard__header">
+      <a href="/" class="logo" id="logo__id" tabindex="1" aria-label="Home">
+        <img
+          src="https://crushingit.tech/hackathon-assets/shopify-icon.svg"
+          alt="Shopify"
+          class="half__logo"
+        />
+        <img
+          src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
+          alt="Shopify"
+          class="full__logo"
+        />
+      </a>
+
+      <form class="header__search__input">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 13 14"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.82264 10.3833C7.89957 11.0841 6.74835 11.5 5.5 11.5C2.46243 11.5 0 9.03757 0 6C0 2.96243 2.46243 0.5 5.5 0.5C8.53757 0.5 11 2.96243 11 6C11 7.24835 10.5841 8.39957 9.8833 9.32264L12.7803 12.2197C13.0732 12.5126 13.0732 12.9874 12.7803 13.2803C12.4874 13.5732 12.0126 13.5732 11.7197 13.2803L8.82264 10.3833ZM9.5 6C9.5 8.20914 7.70914 10 5.5 10C3.29086 10 1.5 8.20914 1.5 6C1.5 3.79086 3.29086 2 5.5 2C7.70914 2 9.5 3.79086 9.5 6Z"
+            fill="#fff"
+          />
+        </svg>
+        <input
+          type="text"
+          placeholder="Search"
+          id="input__id"
+          aria-label="Search"
+          tabindex="2"
+        />
+      </form>
+
+      <div class="user__profile">
+        <button
+          id="notification__menu"
+          role="alert"
+          tabindex="3"
+          aria-haspopup="tree"
+          aria-expanded="false"
+          aria-label="Notifications"
+          aria-controls="notification-popup"
+          id="notification-control"
+          class="notification__bell"
+        >
+          <svg
+            width="41"
+            height="40"
+            viewBox="0 0 21 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.75203 14.4239L5.3061 14.1427C3.45144 13.9295 2.92542 11.4844 4.52838 10.5274L4.5933 10.4886C5.466 9.96761 6.00045 9.02609 6.00045 8.00969V7.5C6.00045 5.01472 8.01517 3 10.5005 3C12.9857 3 15.0005 5.01472 15.0005 7.5V8.00969C15.0005 9.02609 15.5349 9.96761 16.4076 10.4886L16.4725 10.5274C18.0755 11.4844 17.5495 13.9295 15.6948 14.1427L13.152 14.435V14.8C13.152 16.2912 11.9432 17.5 10.452 17.5C8.96086 17.5 7.75203 16.2912 7.75203 14.8V14.4239ZM11.652 14.5H9.25203V14.8C9.25203 15.4627 9.78929 16 10.452 16C11.1148 16 11.652 15.4627 11.652 14.8V14.5ZM8.50045 13H12.5005L15.5235 12.6525C15.953 12.6032 16.0748 12.0369 15.7036 11.8153L15.6387 11.7766C15.5591 11.7291 15.4815 11.6793 15.4057 11.6273C15.2506 11.521 15.1036 11.4055 14.9651 11.2818C14.9405 11.2598 14.9162 11.2377 14.8922 11.2152C14.0144 10.395 13.5005 9.23833 13.5005 8.00969V7.5C13.5005 5.84315 12.1573 4.5 10.5005 4.5C8.8436 4.5 7.50045 5.84315 7.50045 7.5V8.00969C7.50045 9.23833 6.98651 10.395 6.10871 11.2152C6.08469 11.2377 6.06039 11.2598 6.03583 11.2818C5.89734 11.4055 5.75029 11.521 5.59523 11.6273C5.51945 11.6793 5.44176 11.7291 5.36222 11.7766L5.29729 11.8153C4.9261 12.0369 5.0479 12.6032 5.47739 12.6525L8.50045 13Z"
+              fill="#fff"
+            />
+          </svg>
+        </button>
+        <!-- The Header Notification dropdown -->
+        <section
+          class="notification__dropdown"
+          id="notification-popup"
+          aria-live="polite"
+          aria-labelledby="notification-control"
+          role="alertdialog"
+        >
+          <header>
+            <p>Alerts</p>
+            <span class="dropdown-con">
+              <!-- role="slant__noti__ham" -->
+              <img
+                class="slant__hambuger"
+                src="https://i.imgur.com/u7RMvQz.png"
+                alt="Alert"
+              />
+              <!-- role="slant__noti__ham" -->
+              <svg
+                class="marked__noti"
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"
+                />
+              </svg>
+            </span>
+          </header>
+          <footer>
+            <p>Alerts about your store and account will show here</p>
+          </footer>
+        </section>
+
+        <button
+          class="profile__btn"
+          id="menu-control"
+          tabindex="6"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-label="User Menu"
+          aria-controls="user-menu-popup"
+        >
+          <!-- aria-label="Davii Collections" -->
+          <span class="full__name">Davii Collections</span>
+          <span class="name__shortened">DC</span>
+        </button>
+        <!-- The Header User Profile Dropdown -->
+        <section
+          class="header__profile__dropdown"
+          id="user-menu-popup"
+          aria-labelledby="menu-control"
+          role="menu"
+        >
+          <header class="profile__dropdown__header">
+            <div class="name__header">
+              <p>
+                <span class="name__shortened">DC</span>
+                <span class="full__name">Davii Collections</span>
+              </p>
+              <span class="mark__icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5"
+                  />
+                </svg>
+              </span>
+            </div>
+            <button class="all__stores" role="profile__items">
+              <img
+                src="https://crushingit.tech/hackathon-assets/icon-store.svg"
+                alt="All store"
+              />
+              <span>All Stores</span>
+            </button>
+          </header>
+
+          <hr />
+
+          <ul class="profile__dropdown__list">
+            <li><a href="" role="profile__items">Help Center</a></li>
+            <li><a href="" role="profile__items">Changelog</a></li>
+            <li><a href="" role="profile__items">Community forums</a></li>
+            <li><a href="" role="profile__items">Hire a Shopify Partner</a></li>
+            <li><a href="" role="profile__items">Keyboard shortcuts</a></li>
+
+            <hr />
+
+            <button class="base__items" role="profile__items">
+              <span>David Micheal</span>
+              <br /><span>davidmicheal@gmail.com</span>
+            </button>
+            <button class="base__items" role="profile__items">
+              Manage account
+            </button>
+            <button class="base__items" role="profile__items">Log out</button>
+          </ul>
+        </section>
+      </div>
+    </header>
+
+    <!-- ================ -->
+    <!-- Body of the page -->
+    <main class="all__body">
+      <header class="body__header">
+        <div class="header__of__body">
+          <p>Extend your trial for $1/month for 3 months on select plans.</p>
+          <button
+            role="button"
+            aria-label="Select a plan"
+            id="select__plan__btn"
+            tabindex="11"
+          >
+            Select a plan
+          </button>
+
+          <button
+            tabindex="12"
+            aria-label="close trial notification"
+            class="header__close__icon"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main body -->
+      <section>
+        <div class="main__body">
+          <!-- Setup guide summary -->
+          <div class="main__body__top">
+            <div class="setup__guide">
+              <h3>Setup guide</h3>
+              <p>
+                Use this personalized guide to get your store up and running.
+              </p>
+              <div class="text__and__progress">
+                <span>1/5 completed</span>
+                <div class="progress">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="toggle__btn setup__open__icon"
+              aria-label="Open guide set up"
+              tabindex="15"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+
+            <button
+              class="toggle__btn setup__close__icon"
+              aria-label="Close guide set up"
+              tabindex="16"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- ============= -->
+          <!-- List of guide -->
+          <div class="all__lists">
+            <!-- Customize your online store -->
+            <div
+              class="guide__item customize__online__store"
+              role="guide__role"
+              aria-label="Step 1 of 5"
+              tabindex="20"
+            >
+              <div
+                class="guide__item__dashed cuz__guide__dashed"
+                role="customize__role"
+              >
+                <button
+                  class="guide__complete__icon not-completed-icon cuz__not__completed"
+                  id="not-completed-icon"
+                  aria-label="On step 1 of 5 incomplete"
+                  tabindex="21"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="12"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="4 6"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  class="guide__complete__icon loading-spinning-icon cuz__spinning"
+                  id="loading-spinner-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 28 28"
+                    fill="none"
+                  >
+                    <path
+                      d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon completed-icon cuz__completed"
+                  id="completed-icon"
+                  aria-label="On step 1 of 5 marked complete"
+                  tabindex="22"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                    <path
+                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <!-- Add and remove -->
+              <h4></h4>
+                <button
+                  class="guide__title is__remove__customize"
+                  role="customize__role"
+                  tabindex="25"
+                >
+                  Customize your online store
+                </button>
+              </h4>
+              <div class="is__remove is__remove__customize__con">
+                <summary class="item__summary customize__summary">
+                  <h4>Customize your online store</h4>
+                  <span>
+                    Choose a theme and add your logo, colors, and images to
+                    reflect your brand.
+                  </span>
+                  <a
+                    href="https://help.shopify.com/en/manual/online-store/themes/customizing-themes"
+                    class="cuz__learn__more"
+                    target="_blank"
+                    role="customize__role"
+                    tabindex="26"
+                    >Learn more</a
+                  >
+                  <br /><button
+                    class="guide__btn"
+                    role="customize__role"
+                    tabindex="27"
+                  >
+                    Customize theme
+                  </button>
+                </summary>
+                <img
+                  class="guide__img customize__img"
+                  src="https://crushingit.tech/hackathon-assets/customise-store.png"
+                  alt="Customize"
+                />
+              </div>
+            </div>
+
+            <!-- Add your first product -->
+            <div
+              class="guide__item Add__your__first__product"
+              role="guide__role"
+              tabindex="30"
+            >
+              <div
+                class="guide__item__dashed product__guide__dashed"
+                role="product__role"
+              >
+                <button
+                  class="guide__complete__icon not-completed-icon product__not__completed"
+                  id="not-completed-icon"
+                  tabindex="31"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="12"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="4 6"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon loading-spinning-icon product__spinning"
+                  id="loading-spinner-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 28 28"
+                    fill="none"
+                  >
+                    <path
+                      d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon completed-icon product__completed"
+                  id="completed-icon"
+                  tabindex="32"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                    <path
+                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <!-- Add and remove -->
+              <h4>
+              <button class="guide__title is__remove__product"
+                role="product__role"
+                tabindex="33">
+                  Add your first product
+                </button>
+              </h4>
+              <div class="is__remove is__remove__product__con">
+                <summary class="item__summary product__summary">
+                  <h4>Add your first product</h4>
+                  <span>
+                    Write a description, add photos, and set pricing for the
+                    products you plan to sell.
+                  </span>
+                  <a
+                    href="https://help.shopify.com/en/manual/products/add-update-products"
+                    target="_blank"
+                    class="product__learn__more"
+                    role="product__role"
+                    tabindex="34"
+                    >Learn more</a
+                  >
+                  <br /><button
+                    class="guide__btn add__product__btn"
+                    role="product__role"
+                    tabindex="35"
+                  >
+                    Add product
+                  </button>
+                  <button class="import__product__btn" tabindex="36">
+                    Import product
+                  </button>
+                </summary>
+                <img
+                  class="guide__img product__img"
+                  src="https://crushingit.tech/hackathon-assets/product.png"
+                  alt="Product"
+                />
+              </div>
+            </div>
+
+            <!-- Add a custom domain -->
+            <div
+              class="guide__item Add__custom__domain"
+              role="guide__role"
+              tabindex="40"
+            >
+              <div
+                class="guide__item__dashed domain__guide__dashed"
+                role="domain__role"
+              >
+                <button
+                  class="guide__complete__icon not-completed-icon domain__not__completed"
+                  id="not-completed-icon"
+                  tabindex="41"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="12"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="4 6"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon loading-spinning-icon domain__spinning"
+                  id="loading-spinner-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 28 28"
+                    fill="none"
+                  >
+                    <path
+                      d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon completed-icon domain__completed"
+                  id="completed-icon"
+                  tabindex="42"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                    <path
+                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <!-- Add and remove -->
+              <h4
+                
+              >
+              <button class="guide__title is__remove__domain"
+                role="domain__role"
+                tabindex="43">
+                Add a custom domain
+            </button>
+              </h4>
+              <div class="is__remove is__remove__domain__con">
+                <summary class="item__summary domain__summary">
+                  <h4>Add a custom domain</h4>
+                  <span>
+                    Your current domain is 222219.myshopify.com but you can add
+                    a custom domain to help customers find your online store.
+                  </span>
+                  <a
+                    href="https://help.shopify.com/en/manual/domains"
+                    target="_blank"
+                    class="domain__learn__more"
+                    role="domain__role"
+                    tabindex="44"
+                    >Learn more</a
+                  >
+                  <br /><button
+                    class="guide__btn add__domain__btn"
+                    role="domain__role"
+                    tabindex="45"
+                  >
+                    Add domain
+                  </button>
+                </summary>
+                <img
+                  class="guide__img domain__img"
+                  src="https://crushingit.tech/hackathon-assets/website.png"
+                  alt="Domain"
+                />
+              </div>
+            </div>
+
+            <!-- Name your store -->
+            <div
+              class="guide__item Name__your__store"
+              role="guide__role"
+              tabindex="50"
+            >
+              <div class="guide__item__dashed">
+                <button
+                  class="guide__complete__icon not-completed-icon"
+                  id="not-completed-icon"
+                  tabindex="51"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="12"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="4 6"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon loading-spinning-icon"
+                  id="loading-spinner-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 28 28"
+                    fill="none"
+                  >
+                    <path
+                      d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon completed-icon"
+                  id="completed-icon"
+                  tabindex="52"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                    <path
+                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <!-- Add and remove -->
+              <h4 >
+                <button class="guide__title is__remove__store" tabindex="53">
+                    Name your store
+                </button>
+              </h4>
+              <div class="is__remove is__remove__store__con">
+                <summary class="item__summary store__summary">
+                  <h4>Name your store</h4>
+                  <span>
+                    Your temporary store name is currently Davii collections.
+                    The store name appears in your admin and your online store.
+                  </span>
+                  <a href="https://help.shopify.com/en/manual/intro-to-shopify/initial-setup/setup-business-settings#set-or-change-your-online-store-name-and-legal-business-name" target="_blank" tabindex="54">Learn more</a>
+                  <br /><button
+                    class="guide__btn add__store__btn"
+                    tabindex="55"
+                  >
+                    Name store
+                  </button>
+                </summary>
+                <img
+                  class="guide__img store__img"
+                  src="https://crushingit.tech/hackathon-assets/name-store.png"
+                  alt="Store"
+                />
+              </div>
+            </div>
+
+            <!-- Set up a payment provider -->
+            <div
+              class="guide__item Set__payment__provider"
+              role="guide__role"
+              tabindex="60"
+            >
+              <div class="guide__item__dashed">
+                <button
+                  class="guide__complete__icon not-completed-icon"
+                  id="not-completed-icon"
+                  tabindex="61"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="12"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="4 6"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon loading-spinning-icon"
+                  id="loading-spinner-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 28 28"
+                    fill="none"
+                  >
+                    <path
+                      d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                      stroke="#000"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="guide__complete__icon completed-icon"
+                  id="completed-icon"
+                  tabindex="62"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                    <path
+                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <!-- Add and remove -->
+              <h4 >
+                <button class="guide__title is__remove__payment" tabindex="63">
+                    Set up a payment provider
+                </button>
+              </h4>
+              <div class="is__remove is__remove__payment__con">
+                <summary class="item__summary payment__summary">
+                  <h4>Set up a payment provider</h4>
+                  <span>
+                    Choose a payment provider to start accepting payments.
+                    You’ll need to create an account with the payment provider
+                    and set it up with your Shopify store.
+                  </span>
+                  <a href="https://help.shopify.com/en/manual/payments" target="_blank" tabindex="64">Learn more</a>
+                  <br /><button
+                    class="guide__btn add__payment__btn"
+                    tabindex="65"
+                  >
+                    Name store
+                  </button>
+                </summary>
+                <img
+                  class="guide__img payment__img"
+                  src="https://crushingit.tech/hackathon-assets/payment.png"
+                  alt="Payment"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript Link -->
+    <script src="./app.js"></script>
+  </body>
+</html>
