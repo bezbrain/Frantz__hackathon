@@ -158,6 +158,11 @@ input:focus {
 .toggle__noti__dropdown {
   display: block;
 }
+@media screen and (max-width: 650px) {
+  .notification__dropdown {
+    width: 290px;
+  }
+}
 @media screen and (max-width: 500px) {
   .notification__dropdown {
     right: 50%;
